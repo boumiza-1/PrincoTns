@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NEXORA — Define Your Style, Own Your World</title>
+  <meta name="description" content="Discover NEXORA's latest streetwear collections, creative fashion projects, sustainable style and featured videos. Define your style.">
+  <meta name="theme-color" content="#f7f4fc">
+
+  <!-- Replace nexora-demo.github.io with your real domain -->
+  <link rel="canonical" href="https://nexora-demo.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NEXORA — Define Your Style">
+  <meta property="og:description" content="Discover new collections, creative looks and fashion inspiration.">
+  <meta property="og:url" content="https://nexora-demo.github.io/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NEXORA",
+    "url": "https://nexora-demo.github.io/",
+    "description": "Fashion inspiration, streetwear collections and creative videos.",
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://nexora-demo.github.io/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --purple: #8054d8;
+      --purple-light: #bca3f3;
+      --ink: #17151c;
+      --paper: #f7f4fc;
+      --white: #fff;
+      --muted: #716c7d;
+      --line: #e8e2f0;
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1200px, 91%); margin-inline: auto; }
+    .muted { color: var(--muted); }
+    .eyebrow {
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #f7f4fceF;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo { font-size: 25px; font-weight: 900; letter-spacing: -1.5px; }
+    .logo span { color: var(--purple); }
+    .links { display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 700; }
+    .links a:hover { color: var(--purple); }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .search-toggle, .menu-toggle {
+      background: white; border: 1px solid var(--line);
+      border-radius: 50%; height: 40px; width: 40px; cursor: pointer;
+    }
+    .menu-toggle { display: none; }
+
+    .search-panel { display: none; padding: 0 0 18px; }
+    .search-panel.open { display: block; }
+    .search-box {
+      display: flex; gap: 10px; padding: 8px;
+      border: 1px solid var(--line); border-radius: 14px;
+      background: white;
+    }
+    .search-box input { flex: 1; min-width: 0; border: 0; outline: none; padding: 8px; }
+    .search-box button, .btn {
+      border: 0; border-radius: 999px; padding: 12px 19px;
+      background: var(--ink); color: white; font-weight: 700;
+      font-size: 12px; cursor: pointer; display: inline-block;
+    }
+    .search-results { font-size: 12px; color: var(--muted); padding-top: 8px; }
+
+    .hero {
+      background: white; border-radius: 0 0 32px 32px;
+      overflow: hidden; padding: 35px; margin-bottom: 35px;
+    }
+    .hero-nav { display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 700; margin-bottom: 35px; }
+    .hero-title {
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 20px; margin-bottom: 22px;
+    }
+    h1 { font-size: clamp(40px, 6.2vw, 82px); line-height: .97; letter-spacing: -5px; margin: 0; }
+    h1 span { color: var(--purple); display: block; font-size: 1.23em; }
+    .title-right { text-align: right; }
+    .hero-image {
+      height: clamp(330px, 48vw, 570px); position: relative;
+      overflow: hidden; border-radius: 24px; background: #a58bda;
+    }
+    .hero-image > img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+    .hero-overlay {
+      position: absolute; inset: 0; display: flex; align-items: end;
+      justify-content: space-between; padding: clamp(20px, 5vw, 55px);
+      background: linear-gradient(0deg, #271449c9, transparent 70%);
+      color: white; gap: 20px;
+    }
+    .hero-overlay h2 { font-size: clamp(27px, 4vw, 48px); line-height: 1.1; margin: 10px 0; }
+    .hero-overlay p { max-width: 340px; font-size: 13px; }
+    .btn-light { background: white; color: var(--ink); }
+    .featured-label {
+      background: white; color: var(--ink); border-radius: 16px;
+      padding: 9px; width: 180px; flex-shrink: 0;
+    }
+    .featured-label img { height: 125px; width: 100%; object-fit: cover; border-radius: 10px; }
+    .featured-label strong, .featured-label small { display: block; padding: 3px 5px; }
+    .featured-label strong { font-size: 12px; }
+    .featured-label small { font-size: 10px; color: var(--muted); }
+
+    section { padding: 70px 0; }
+    .section-head {
+      display: flex; justify-content: space-between;
+      align-items: end; gap: 20px; margin-bottom: 26px;
+    }
+    h2 { font-size: clamp(29px, 4vw, 44px); line-height: 1.12; letter-spacing: -1.8px; margin: 7px 0; }
+    .section-head p { max-width: 390px; font-size: 13px; color: var(--muted); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .chip {
+      border: 1px solid var(--line); background: white;
+      border-radius: 99px; padding: 9px 15px; font-size: 11px;
+      font-weight: 700; cursor: pointer;
+    }
+    .chip.active, .chip:hover { background: var(--purple); border-color: var(--purple); color: white; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
+    .card {
+      background: white; border: 1px solid var(--line);
+      border-radius: 18px; overflow: hidden; transition: transform .2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card img { width: 100%; height: 245px; object-fit: cover; }
+    .card-body { padding: 19px; }
+    .card small { color: var(--purple); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .card h3 { font-size: 18px; margin: 7px 0; }
+    .card p { color: var(--muted); font-size: 12px; }
+    .card-link { font-size: 11px; font-weight: 800; color: var(--purple); }
+    .empty { display: none; padding: 35px; text-align: center; background: white; border-radius: 16px; }
+
+    .video-section { background: #181320; color: white; }
+    .video-section .muted { color: #c4b9d1; }
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .video-card { background: #261d31; border: 1px solid #453451; border-radius: 18px; overflow: hidden; }
+    .video-card iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
+    .video-card div { padding: 18px; }
+    .video-card h3 { margin: 0 0 5px; font-size: 16px; }
+    .video-card p { font-size: 12px; color: #c4b9d1; margin: 0; }
+
+    .about {
+      background: #eae1fa; border-radius: 25px; padding: clamp(25px, 5vw, 55px);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;
+    }
+    .about p { color: #5e536c; font-size: 13px; }
+    .about img { width: 100%; height: 320px; object-fit: cover; border-radius: 18px; }
+
+    .newsletter { text-align: center; background: white; border-radius: 22px; padding: 40px 20px; }
+    .newsletter form { display: flex; gap: 8px; max-width: 460px; margin: 20px auto 0; }
+    .newsletter input { flex: 1; min-width: 0; border: 1px solid var(--line); border-radius: 999px; padding: 12px 16px; }
+    .newsletter-note { font-size: 11px; color: var(--muted); margin-top: 12px; }
+
+    footer { margin-top: 40px; background: #17131f; color: white; padding: 40px 0 22px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; }
+    footer p, footer a { font-size: 12px; color: #c2b8ce; }
+    footer a:hover { color: white; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .copyright { border-top: 1px solid #3a3045; margin-top: 30px; padding-top: 18px; font-size: 10px; color: #a79bb4; }
+
+    [hidden] { display: none !important; }
+    @media (max-width: 760px) {
+      .links {
+        display: none; position: absolute; top: 70px; left: 4.5%;
+        right: 4.5%; background: white; border: 1px solid var(--line);
+        border-radius: 14px; padding: 16px; flex-direction: column; align-items: stretch;
+      }
+      .links.open { display: flex; }
+      .menu-toggle { display: block; }
+      .hero { padding: 18px; }
+      .hero-nav > span:first-child { display: none; }
+      .hero-title { gap: 10px; }
+      h1 { letter-spacing: -2.5px; font-size: clamp(34px, 7vw, 52px); }
+      .hero-image { height: 450px; }
+      .hero-overlay { align-items: end; }
+      .featured-label { display: none; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .card img { height: 190px; }
+      .about { grid-template-columns: 1fr; }
+      .about img { height: 260px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 460px) {
+      .wrap { width: 92%; }
+      .nav { min-height: 66px; }
+      .logo { font-size: 22px; }
+      .hero { margin-bottom: 15px; }
+      .hero-title { grid-template-columns: 1fr; }
+      .title-right { text-align: left; }
+      .hero-image { height: 390px; }
+      .hero-overlay { padding: 18px; }
+      .hero-overlay h2 { font-size: 26px; }
+      .hero-overlay p { font-size: 11px; }
+      .grid, .video-grid { grid-template-columns: 1fr; }
+      .card img { height: 250px; }
+      section { padding: 48px 0; }
+      .section-head { align-items: start; flex-direction: column; }
+      .newsletter form { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home" aria-label="NEXORA home">NEX<span>O</span>RA</a>
+    <nav class="links" id="navigation" aria-label="Main navigation">
+      <a href="#collections">Collections</a>
+      <a href="#creations">Creations</a>
+      <a href="#videos">Videos</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="search-toggle" id="searchToggle" aria-label="Open site search">⌕</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="wrap search-panel" id="searchPanel">
+    <form class="search-box" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="Search collections, creations, videos..." aria-label="Search the site">
+      <button type="submit">Search</button>
+    </form>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+  </div>
+</header>
+
+<main id="home">
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-nav">
+        <span>Independent style studio</span>
+        <span>New season · 2026</span>
+        <span>Worldwide inspiration ↗</span>
+      </div>
+
+      <div class="hero-title">
+        <h1>Define Your <span>STYLE</span></h1>
+        <h1 class="title-right">Own Your <span>WORLD</span></h1>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1500&q=85"
+          alt="Contemporary streetwear fashion editorial"
+          fetchpriority="high">
+        <div class="hero-overlay">
+          <div>
+            <div class="eyebrow" style="color:#f1ddff">✦ New collection</div>
+            <h2>Where Comfort<br>Meets Confidence</h2>
+            <p>Discover original looks, creative stories and inspiration for your everyday style.</p>
+            <a class="btn btn-light" href="#collections">Explore collections ↗</a>
+          </div>
+          <div class="featured-label">
+            <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=500&q=80" alt="Purple streetwear outfit" loading="lazy">
+            <strong>Featured Look</strong>
+            <small>Streetwear inspiration</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections" data-search-section>
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Explore the world</div>
+          <h2>Find your next <span style="color:var(--purple)">look.</span></h2>
+        </div>
+        <p>Explore the collections, discover different aesthetics and find inspiration for your personal style.</p>
+      </div>
+      <div class="chips" id="filters" aria-label="Filter collections">
+        <button class="chip active" data-filter="all" aria-pressed="true">All styles</button>
+        <button class="chip" data-filter="streetwear" aria-pressed="false">Streetwear</button>
+        <button class="chip" data-filter="minimal" aria-pressed="false">Minimal</button>
+        <button class="chip" data-filter="sustainable" aria-pressed="false">Sustainable</button>
+      </div>
+      <div class="grid" id="collectionGrid">
+        <article class="card searchable" data-category="streetwear" data-keywords="purple hoodie streetwear urban casual">
+          <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" alt="Casual hoodie fashion" loading="lazy">
+          <div class="card-body">
+            <small>01 · Streetwear</small>
+            <h3>Urban Essentials</h3>
+            <p>Relaxed silhouettes, everyday layers and bold details.</p>
+            <a class="card-link" href="#contact">Discover the look ↗</a>
+          </div>
+        </article>
+        <article class="card searchable" data-category="minimal" data-keywords="minimal clean neutral modern timeless fashion">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" alt="Modern everyday fashion" loading="lazy">
+          <div class="card-body">
+            <small>02 · Minimal</small>
+            <h3>Less, but Better</h3>
+            <p>Timeless combinations and simple, confident styling.</p>
+            <a class="card-link" href="#contact">Discover the look ↗</a>
+          </div>
+        </article>
+        <article class="card searchable" data-category="sustainable" data-keywords="sustainable nature organic conscious responsible fashion">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Clothing and fashion store" loading="lazy">
+          <div class="card-body">
+            <small>03 · Conscious style</small>
+            <h3>Wear with Purpose</h3>
+            <p>Explore mindful styling and ideas for wearing pieces longer.</p>
+            <a class="card-link" href="#about">Our approach ↗</a>
+          </div>
+        </article>
+      </div>
+      <p class="empty" id="emptyMessage">No results found. Try another search.</p>
+    </section>
+
+    <section id="creations" data-search-section>
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Selected work</div>
+          <h2>Creative <span style="color:var(--purple)">direction.</span></h2>
+        </div>
+        <p>Editorial concepts, visual storytelling and creative experiments for a new generation.</p>
+      </div>
+      <div class="grid">
+        <article class="card searchable" data-keywords="editorial campaign photography purple portrait">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Portrait fashion photography" loading="lazy">
+          <div class="card-body">
+            <small>Art direction</small>
+            <h3>Color in Motion</h3>
+            <p>A portrait-led visual concept built around expressive color.</p>
+            <a class="card-link" href="#contact">Discuss a project ↗</a>
+          </div>
+        </article>
+        <article class="card searchable" data-keywords="fashion campaign city street urban photography">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Fashion campaign portrait" loading="lazy">
+          <div class="card-body">
+            <small>Campaign concept</small>
+            <h3>City After Hours</h3>
+            <p>Urban inspiration with a clean, contemporary visual identity.</p>
+            <a class="card-link" href="#contact">Discuss a project ↗</a>
+          </div>
+        </article>
+        <article class="card searchable" data-keywords="creative design lookbook photography fashion">
+          <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=80" alt="Contemporary outfit styling" loading="lazy">
+          <div class="card-body">
+            <small>Lookbook</small>
+            <h3>Everyday Icons</h3>
+            <p>Building a cohesive story through styling and photography.</p>
+            <a class="card-link" href="#contact">Discuss a project ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <section class="video-section" id="videos" data-search-section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Watch and discover</div>
+          <h2>Ideas in <span style="color:#bca3f3">motion.</span></h2>
+        </div>
+        <p class="muted">Fashion stories, creative process and visual inspiration.</p>
+      </div>
+      <div class="video-grid">
+        <article class="video-card searchable" data-keywords="fashion film editorial video creativity">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4"
+            title="Creative video showcase one"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <div><h3>Visual Stories</h3><p>A space for video inspiration and creative exploration.</p></div>
+        </article>
+        <article class="video-card searchable" data-keywords="design creative behind scenes video studio">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ysz5S6PUM-U"
+            title="Creative video showcase two"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <div><h3>Behind the Frame</h3><p>Discover new perspectives, ideas and creative techniques.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section id="about" data-search-section>
+      <div class="about">
+        <div>
+          <div class="eyebrow">The NEXORA vision</div>
+          <h2>Style is more than what you wear.</h2>
+          <p>NEXORA is a concept space for fashion inspiration, creative direction and visual storytelling. We believe personal style is a way to express identity and explore new ideas.</p>
+          <p>Discover new looks, save your inspiration and find creative possibilities for your next project.</p>
+          <a class="btn" href="#contact">Let's connect ↗</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Fashion editorial illustrating the NEXORA vision" loading="lazy">
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="newsletter">
+        <div class="eyebrow">Stay inspired</div>
+        <h2>Good ideas, delivered.</h2>
+        <p class="muted">Get in touch to discuss collaborations, creative work or general enquiries.</p>
+        <form id="contactForm">
+          <input id="emailInput" type="email" placeholder="Your email address" aria-label="Your email address" required>
+          <button class="btn" type="submit">Contact us ↗</button>
+        </form>
+        <p class="newsletter-note" id="contactMessage" aria-live="polite">This demo does not store or transmit email addresses.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#home">NEX<span>O</span>RA</a>
+        <p>Define your style. Explore new ideas. Own your world.</p>
+      </div>
+      <div class="footer-links">
+        <strong>Explore</strong>
+        <a href="#collections">Collections</a>
+        <a href="#creations">Creations</a>
+        <a href="#videos">Videos</a>
+      </div>
+      <div class="footer-links">
+        <strong>Information</strong>
+        <a href="#about">About NEXORA</a>
+        <a href="#contact">Contact</a>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> NEXORA. Replace demo assets and details with your own before launch.</div>
+  </div>
+</footer>
+
+<script>
+  const searchToggle = document.querySelector("#searchToggle");
+  const searchPanel = document.querySelector("#searchPanel");
+  const searchForm = document.querySelector("#searchForm");
+  const searchInput = document.querySelector("#searchInput");
+  const searchResults = document.querySelector("#searchResults");
+  const cards = [...document.querySelectorAll(".searchable")];
+  const emptyMessage = document.querySelector("#emptyMessage");
+  const chips = [...document.querySelectorAll(".chip")];
+  const menuToggle = document.querySelector("#menuToggle");
+  const navigation = document.querySelector("#navigation");
+  let activeFilter = "all";
+
+  function filterContent() {
+    const query = searchInput.value.trim().toLocaleLowerCase();
+    let count = 0;
+
+    cards.forEach(card => {
+      const searchableText = (
+        card.innerText + " " +
+        (card.dataset.keywords || "") + " " +
+        (card.dataset.category || "")
+      ).toLocaleLowerCase();
+
+      const matchesQuery = !query || searchableText.includes(query);
+      const matchesFilter = activeFilter === "all" ||
+        card.dataset.category === activeFilter;
+
+      const visible = matchesQuery && matchesFilter;
+      card.hidden = !visible;
+      if (visible) count++;
+    });
+
+    emptyMessage.style.display = query && count === 0 ? "block" : "none";
+    searchResults.textContent = query
+      ? `${count} matching item${count === 1 ? "" : "s"} found.`
+      : "Search across collections, creations and videos.";
+  }
+
+  searchToggle.addEventListener("click", () => {
+    searchPanel.classList.toggle("open");
+    if (searchPanel.classList.contains("open")) searchInput.focus();
+  });
+
+  searchForm.addEventListener("submit", event => {
+    event.preventDefault();
+    filterContent();
+    document.querySelector("#collections").scrollIntoView({ behavior: "smooth" });
+  });
+
+  searchInput.addEventListener("input", filterContent);
+
+  chips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      activeFilter = chip.dataset.filter;
+      chips.forEach(item => {
+        const selected = item === chip;
+        item.classList.toggle("active", selected);
+        item.setAttribute("aria-pressed", String(selected));
+      });
+      filterContent();
+    });
+  });
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navigation.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navigation.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Static demo: no email is collected or sent.
+  document.querySelector("#contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+    document.querySelector("#contactMessage").textContent =
+      "Thanks! This demo form is not connected yet. Add a contact service to receive messages.";
+  });
+
+  // Support ?q=streetwear in the URL.
+  const params = new URLSearchParams(window.location.search);
+  if (params.has("q")) {
+    searchPanel.classList.add("open");
+    searchInput.value = params.get("q");
+    filterContent();
+  }
+
+  document.querySelector("#year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
