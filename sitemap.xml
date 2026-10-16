@@ -1,9 +1,1 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://princo.tn/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://www.princo.site/</loc><xhtml:link rel="alternate" hreflang="fr-TN" href="https://www.princo.site/"/><xhtml:link rel="alternate" hreflang="ar-TN" href="https://www.princo.site/ar/"/></url><url><loc>https://www.princo.site/ar/</loc><xhtml:link rel="alternate" hreflang="fr-TN" href="https://www.princo.site/"/><xhtml:link rel="alternate" hreflang="ar-TN" href="https://www.princo.site/ar/"/></url></urlset>

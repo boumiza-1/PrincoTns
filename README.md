@@ -1,59 +1,23 @@
+# PRINCO — Digital Studio 2026
 
-# PRINCO — Digital Studio
+Site web bilingue FR / AR prêt pour GitHub Pages.
 
-Site vitrine responsive pour une agence de création digitale.
+- Accueil FR : `/`
+- Accueil AR : `/ar/`
+- CSS et JS partagés, pages HTML directement indexables
+- SEO : meta uniques, canonical, hreflang, sitemap, robots.txt, structured data ProfessionalService et FAQPage
+- Packs sur devis, **aucune remise ni tarif inventé**
+- Images d’illustration Unsplash (pas d’images Google reprises sans licence). Remplacer par photos réelles/avec droits pour meilleure crédibilité.
+- WhatsApp : +216 96 206 615
 
-## Technologies
-- HTML5
-- CSS3
-- JavaScript vanilla
-- Google Fonts
-- Images d'illustration hébergées sur Unsplash
+## Déploiement
+Uploader les fichiers/dossiers du ZIP à la racine du dépôt (incluant le dossier `ar`). GitHub Pages depuis la branche principale, dossier racine.
 
-## Fonctionnalités
-- Design responsive mobile, tablette et ordinateur
-- Navigation mobile
-- Recherche des services et projets
-- Services digitaux et portfolio
-- Maquettes avant/après
-- Formulaire de contact via WhatsApp
-- Boutons d'appel et de contact
-- SEO technique de base
-- Données structurées Schema.org
-- robots.txt et sitemap.xml
-- Animations accessibles avec prise en compte de
-  prefers-reduced-motion
+## Domaine
+Le CNAME fourni était `www.princo.site`. Canonical et sitemap ont été alignés sur ce nom. Vérifier la configuration DNS / SSL et les redirections de `princo.site` vers `www.princo.site`.
 
-## Installation
-1. Télécharge ou clone le dépôt GitHub.
-2. Place tous les fichiers à la racine du projet.
-3. Ouvre index.html dans un navigateur.
-4. Remplace les images et exemples par les réalisations
-   réelles de PRINCO.
-5. Vérifie le domaine dans index.html et sitemap.xml.
+## Images
+Les URLs externes d'Unsplash sont des images d'illustration préexistantes du projet ou d'une photothèque. Vérifier leur licence avant utilisation commerciale et remplacer par vos créations authentiques.
 
-## Déploiement GitHub Pages
-1. Crée un dépôt GitHub nommé princo.
-2. Envoie les fichiers à la racine du dépôt.
-3. Ouvre Settings > Pages.
-4. Choisis Deploy from a branch.
-5. Sélectionne la branche main et le dossier /root.
-6. Enregistre et attends la publication.
-
-## Créateur du site
-Amine Boumiza
-Téléphone : +216 96 206 615
-
-## SEO après publication
-- Configure Google Search Console.
-- Vérifie la propriété du domaine.
-- Soumets sitemap.xml.
-- Ajoute des titres et descriptions uniques si de
-  nouvelles pages sont créées.
-- Vérifie les performances avec PageSpeed Insights.
-- Ajoute des photos originales et des textes utiles.
-
-## Note
-Le formulaire ouvre WhatsApp ; il ne stocke pas de données
-sur un serveur. Les résultats SEO dépendent de nombreux
-facteurs et ne sont pas garantis.
+## Avant publication
+Tester les liens, valider les offres réellement disponibles, et soumettre le sitemap dans Search Console. Le formulaire prépare un message WhatsApp; il ne conserve pas les messages.
