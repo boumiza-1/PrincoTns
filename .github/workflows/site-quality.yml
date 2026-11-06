@@ -1,0 +1,22 @@
+name: PRINCO site quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check browser JavaScript syntax
+        run: |
+          node --check script.js
+          node --check chatbot.js
+      - name: Validate static SEO, assets and internal links
+        run: python3 scripts/test_site.py
