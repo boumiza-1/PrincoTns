@@ -1,0 +1,39 @@
+/* PRINCO digital assistant - isolated, mobile accessible, no trackers */
+#princo-chat{position:fixed;z-index:2000;bottom:22px;right:22px;font-family:'DM Sans',Arial,sans-serif;color:#23102c;line-height:1.5;direction:ltr}
+#princo-chat *{box-sizing:border-box}
+#princo-chat button,#princo-chat input{font:inherit}
+#princo-chat .pc-fab{display:flex;gap:10px;align-items:center;cursor:pointer;position:relative;background:linear-gradient(115deg,#ff3044,#ffac18);color:#fff;border:2px solid #fff6;border-radius:100px;padding:7px 17px 7px 7px;box-shadow:0 14px 42px #c8235073;font-weight:900;font-size:12px}
+#princo-chat .pc-fab-orb,#princo-chat .pc-avatar{background:#ffdf28;color:#a128a3;border-radius:50%;display:grid;place-items:center;font-size:22px;font-weight:1000;width:42px;height:42px;flex:0 0 42px;position:relative}
+#princo-chat .pc-fab-orb span,#princo-chat .pc-avatar span{position:absolute;top:-3px;right:3px;font-size:11px;color:#f53b45}
+#princo-chat .pc-pulse{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 5px #ffffff33}
+#princo-chat .pc-panel{height:min(630px,calc(100dvh - 106px));width:min(405px,calc(100vw - 24px));background:#fff;box-shadow:0 20px 70px #0007;border-radius:24px;display:flex;flex-direction:column;border:1px solid #efdfef;overflow:hidden;margin-bottom:12px}
+#princo-chat .pc-panel[hidden]{display:none}
+#princo-chat .pc-head{padding:17px;background:linear-gradient(115deg,#fc2734,#ff9f16);display:flex;gap:11px;align-items:center;color:white}
+#princo-chat .pc-headcopy{display:flex;flex:1;flex-direction:column}
+#princo-chat .pc-headcopy strong{font-size:18px;letter-spacing:.07em}
+#princo-chat .pc-headcopy small{font-size:11px;font-weight:700}
+#princo-chat .pc-close{border:1px solid #ffffff66;background:#ffffff22;color:white;width:33px;height:33px;cursor:pointer;border-radius:50%;font-size:24px}
+#princo-chat .pc-langs{display:flex;justify-content:center;gap:6px;padding:9px;background:#fff2f7;border-bottom:1px solid #f1dce9}
+#princo-chat .pc-langs button{background:transparent;border:1px solid transparent;border-radius:100px;padding:7px 12px;color:#57204b;font-size:11px;font-weight:800;cursor:pointer}
+#princo-chat .pc-langs [aria-pressed=true]{background:#8b41e6;color:white}
+#princo-chat .pc-messages{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:13px;padding:16px;background:linear-gradient(#fff,#fffafd);overscroll-behavior:contain}
+#princo-chat .pc-message{display:flex;flex-direction:column;align-items:flex-start;max-width:93%;gap:7px}
+#princo-chat .pc-message.user{align-self:flex-end;align-items:flex-end}
+#princo-chat .pc-bubble{background:#fff;border:1px solid #eadbea;border-radius:15px 15px 15px 4px;padding:11px 13px;font-size:13px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}
+#princo-chat .pc-message.user .pc-bubble{background:#8b41e6;color:white;border-color:#8b41e6;border-radius:15px 15px 4px 15px}
+#princo-chat .pc-actions{display:flex;flex-wrap:wrap;gap:6px}
+#princo-chat .pc-action{background:#ffedb9;border:1px solid #ffc333;border-radius:30px;padding:7px 10px;color:#4c244a;font-size:11px;font-weight:800;text-decoration:none}
+#princo-chat .pc-action:hover{background:#ffe18a}
+#princo-chat .pc-chips{display:flex;overflow-x:auto;gap:7px;padding:9px;border-top:1px solid #f0e3ee;background:#fff}
+#princo-chat .pc-chip{border:1px solid #e9b9df;border-radius:100px;padding:8px 11px;font-size:11px;font-weight:700;color:#7119a3;background:#fff4ff;white-space:nowrap;cursor:pointer}
+#princo-chat .pc-form{display:flex;gap:8px;padding:11px 11px 5px;background:#fff;border-top:1px solid #f3e6ee}
+#princo-chat .pc-input{flex:1;min-width:0;border:1px solid #e7d4e6;border-radius:12px;background:#fcf9fb;color:#211126;padding:12px;font-size:12px;outline:none}
+#princo-chat .pc-input:focus{border-color:#9c47f0}
+#princo-chat .pc-submit{border:0;border-radius:12px;width:43px;background:#ffcc28;color:#411032;font-size:20px;font-weight:900;cursor:pointer}
+#princo-chat .pc-privacy{background:white;text-align:center;color:#97869a;font-size:10px;margin:0;padding:1px 8px 9px}
+#princo-chat [dir=rtl] .pc-message{align-self:flex-start;direction:rtl}
+#princo-chat [dir=rtl] .pc-message.user{align-self:flex-end}
+#princo-chat [dir=rtl] .pc-bubble{text-align:right}
+#princo-chat button:focus-visible,#princo-chat a:focus-visible{outline:2px solid #8737e3;outline-offset:2px}
+@media(max-width:540px){#princo-chat{bottom:10px;right:10px}#princo-chat .pc-panel{width:calc(100vw - 20px);height:min(640px,calc(100dvh - 85px))}#princo-chat .pc-fab{margin-left:auto;padding:7px;border-radius:50%}#princo-chat .pc-fab-label,#princo-chat .pc-pulse{display:none}}
+@media(prefers-reduced-motion:reduce){#princo-chat *{animation:none!important;transition:none!important}}
