@@ -57,5 +57,6 @@ if(i.greet)return {text:own.greet};
 return {text:own.generic+'\n'+own.quote,links:[{label:own.cta,url:whats('Bonjour PRINCO, je souhaite demander un devis. Voici ma question : '+text)}]};
 }
 function send(value){const txt=String(value||'').trim().slice(0,400);if(!txt)return;input.value='';setLang(guess(txt,state.lang));message(txt,'user');const result=response(txt);message(result.text,'bot',result.links||[]);chips.replaceChildren();}
+document.querySelectorAll('[data-open-princo-chat]').forEach(el=>el.addEventListener('click',()=>open(true)));
 $('.pc-fab').addEventListener('click',()=>open(!state.open));$('.pc-close').addEventListener('click',()=>open(false));$('.pc-form').addEventListener('submit',e=>{e.preventDefault();send(input.value);});root.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&state.open)open(false);});setLang(state.lang);
 })();
